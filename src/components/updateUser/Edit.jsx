@@ -23,7 +23,7 @@ const Edit = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/getOne/${id}`)
+        axios.get(`https://mern-backend-o8uw.onrender.com/api/getOne/${id}`)
         .then((response) => {
             setUser(response.data);
         })
@@ -33,7 +33,7 @@ const Edit = () => {
     const submitForm = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:8000/api/update/${id}`, user);
+            const response = await axios.put(`https://mern-backend-o8uw.onrender.com/api/update/${id}`, user);
             toast.success(response.data.msg, {position: "top-right"});
             navigate("/");
         } catch (error) {
